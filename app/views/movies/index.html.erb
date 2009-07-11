@@ -1,15 +1,14 @@
-<div class="pager_main">
-  <%= will_paginate @movie %>
-</div>
+<div class="pager_main"><%= will_paginate @movie %></div>
 <div class="pager_sub"></div>
 <div class="pager_end"></div>
 
-<div class="movie_info_left"></div>
-<% num = 0 -%>
-<div id="main">
+<div class="movie_info_left">&nbsp;&nbsp;</div>
+
+<div id="movie_info_main">
+  <% num = 0 -%>
   <% @movie.each do |data| -%>
     <% num = num + 1 -%>
-    <div class="movie_info">
+    <div class="one_movie">
       <div class="youtube">
         <% if data.yurl -%>
           <%= link_to(image_tag("youtube.gif", :size => "40x26", :alt => data.name), 
@@ -25,7 +24,7 @@
       <div class="movie_name"><%= data.name %></div>
     </div>
     <% if num % 5 == 0 -%>
-      <div class="movie_info_end"></div>
+      <div class="one_movie_end"></div>
     <% end -%>
   <% end -%>
 </div>
