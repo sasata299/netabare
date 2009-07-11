@@ -196,3 +196,8 @@ span.boldred {
 img.movix {
   margin-bottom: 10px;
 }
+
+div#amazon a:hover {
+  background-color: transparent;
+}
+
