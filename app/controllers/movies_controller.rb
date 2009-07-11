@@ -1,6 +1,13 @@
 class MoviesController < ApplicationController
+  caches_page :index, :youtube
+
   def index
-    @movie = Movie.paginate(:all, :page => params[:page], :per_page => 25, :order => ["updated_at DESC"])
+    @movie = Movie.paginate(
+      :all, 
+      :order => ["updated_at DESC"],
+      :page => params[:page], 
+      :per_page => 25
+    )
   end
 
   def youtube
