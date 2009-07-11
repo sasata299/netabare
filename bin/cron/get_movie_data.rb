@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+ENV["RAILS_ENV"] ||= 'production'
+
 require 'rubygems'
 require 'active_record'
 $:.push(File.dirname(__FILE__) + "/../../app/models")
@@ -7,7 +9,7 @@ require 'movie'
 require 'netabare'
 
 config = YAML.load_file(File.dirname(__FILE__) + "/../../config/database.yml")
-ActiveRecord::Base.establish_connection( config["development"] )
+ActiveRecord::Base.establish_connection(config[ ENV["RAILS_ENV"] ])
 ActiveRecord::Base.logger=Logger.new(STDOUT)
 
 $KCODE = 's'
