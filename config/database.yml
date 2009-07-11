@@ -19,7 +19,7 @@ development:
   encoding: utf8
   database: netabare_devel
   username: root
-  password: sski283
+  password: 
   host: localhost
   socket: /usr/local/mysql/mysql.sock
 
@@ -31,7 +31,7 @@ test:
   encoding: utf8
   database: netabare_test
   username: root
-  password: sski283
+  password: 
   host: localhost
   socket: /usr/local/mysql/mysql.sock
 

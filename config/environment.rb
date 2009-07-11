@@ -52,9 +52,19 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
+  secret = ""
+  secret_path = File.join(RAILS_ROOT, "config/secret.txt")
+  if File.exist?(secret_path)
+    secret = open(secret_path) { |io| io.read }.gsub(/\s/, '')
+  end
+  if secret.empty?
+    characters = ("0".."9").to_a + ("a".."f").to_a
+    secret = Array.new(128) { characters[rand(characters.size)] }.join
+    open(secret_path, "w") { |io| io.write(secret) }
+  end
   config.action_controller.session = {
     :session_key => '_netabare_session',
-    :secret      => '3d14e4c8c3e00fcbe5d81fb685ff2590ecffb08f9ad47fa8ef2c0706b741c0d2fc45b32183d9f97b8fdb92507418709d5b8b13cac2c85fe7a8393f9458f3a10b'
+    :secret      => secret
   }
 
   # Use the database for sessions instead of the cookie-based default,
