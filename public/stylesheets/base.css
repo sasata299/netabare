@@ -1,0 +1,178 @@
+body {
+  margin: 0px;
+}
+
+div#container {
+  width: 980px;
+  margin: 0 auto;
+  background-color: pink;
+}
+
+div#header {
+  background-color: black;
+  padding: 10px 0px 10px 30px;
+  margin-bottom: 10px;
+  font-size: xx-small;
+  color: white;
+}
+
+div.title_left {
+  float: left;
+  font-size: 68px;
+  padding-left: 40px;
+}
+
+div.title_left a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+div.title_left a:hover {
+  background-color: transparent;
+}
+
+div.title_right{
+  float: left;
+  margin-top: 15px;
+  margin-left: 25px;
+  font-size: small;
+  padding: 6px;
+}
+
+div.title_end {
+  clear: both;
+}
+
+div#container img {
+  border: 1px solid #CCC;
+}
+
+div#container div.youtube img,
+div#container div.title_left img,
+div#container span.credit img,
+div#container img.movix {
+  border: 0px;
+}
+
+div.youtube {
+  height: 28px;
+}
+
+div.movie_info_left {
+  float: left;
+  width: 20px;
+}
+
+div#main {
+  float: left;
+  width: 750px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+div#amazon {
+  float: left;
+  width: 160px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+div.movie_info_right {
+  float: left;
+  width: 20px;
+}
+
+div.movie_info_end {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+div.movie_info {
+  float: left;
+  width: auto;
+  width: 145px;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+
+div.movie_name {
+  font-size: small;
+  color: gray;
+  width: 145px;
+}
+
+div.neta_title {
+  font-weight: bold;
+}
+
+div.neta_site {
+  padding-top: 10px;
+}
+
+div.neta_site a {
+  color: darkgreen;
+  font-size: x-small;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+div.neta_body {
+  width: 670px;
+  background-color: linen;
+  font-size: small;
+}
+
+div.neta_body a {
+  text-decoration: none;
+}
+
+div#footer {
+  text-align: right;
+  background-color: black;
+  font-size: x-small;
+  color: white;
+  margin-top: 20px;
+  padding-right: 30px;
+}
+
+div.links {
+  padding: 10px 0px 10px 0px;
+}
+
+div.links a {
+  text-decoration: none;
+  color: white;
+}
+
+div.links a:hover {
+  color: black;
+}
+
+div.links span.credit {
+  padding-right: 5px;
+}
+
+.faviconize {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  border: 0;
+}
+
+a:hover { 
+  background-color: #f5deb3;
+}
+
+span.bold {
+  font-weight: bold;
+}
+
+span.boldred {
+  color: red;
+  font-weight: bold;
+}
+
+img.movix {
+  margin-bottom: 10px;
+}

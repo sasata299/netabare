@@ -1,0 +1,33 @@
+<div class="movie_info_left"></div>
+<% num = 0 -%>
+<div id="main">
+  <% @movie.reverse.each do |data| -%>
+    <% num = num + 1 -%>
+    <div class="movie_info">
+      <div class="youtube">
+        <% if data.yurl -%>
+          <%= link_to(image_tag("youtube.gif", :size => "40x26", :alt => data.name), 
+                      {:action => "youtube", :id => data.id},
+                      {:class => "movie"}) %>
+        <% end -%>
+      </div>
+      <div class="movie_image">
+        <%= link_to(image_tag(data.image, :alt => data.name), 
+                    {:controller => "netabares", :action => "show", :id => data.id}, 
+                    {:class => "fancybox"}) %>
+      </div>
+      <div class="movie_name"><%= data.name %></div>
+    </div>
+    <% if num % 5 == 0 -%>
+      <div class="movie_info_end"></div>
+    <% end -%>
+  <% end -%>
+</div>
+
+<div id="amazon">
+  <%= link_to(image_tag("movix_01.gif", :class => "movix", :size => "160x80", :alt => "映画館・シネコンのMOVIX"), "http://www.movix.co.jp/") %>
+  <SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/sasata299-22/8002/91f4e456-ae5c-470a-8b0f-d27cdfedc4f5"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fsasata299-22%2F8002%2F91f4e456-ae5c-470a-8b0f-d27cdfedc4f5&Operation=NoScript">Amazon.co.jp ウィジェット</A></NOSCRIPT>
+</div>
+
+<div class="movie_info_right"></div>
+<div class="movie_info_end"></div>

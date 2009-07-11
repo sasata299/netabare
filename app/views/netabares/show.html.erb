@@ -1,0 +1,17 @@
+<div class="neta_title">
+  <%= @netabare[0].movie.name %>の<span class="boldred">ネタバレ</span>情報
+</div>
+<% num = 0 -%>
+<% @netabare.each do |neta| -%>
+  <% if neta.body.size > 400 -%>
+    <% num = num + 1 -%>
+    <div class="neta_site"><%= link_to(neta.name, neta.url, :popup => true) %></div>
+    <div class="neta_body">
+      <%= truncate(neta.body, :length => 600) %>
+      <% if neta.body.length > 600 -%>
+        <%= link_to("続きを読む", neta.url, :popup => true) %>
+      <% end -%>
+    </div>
+  <% end -%>
+  <% break if num >= 5 -%>
+<% end -%>
