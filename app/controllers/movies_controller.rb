@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movie = Movie.find(:all, :order => ["updated_at DESC"])
+    @movie = Movie.paginate(:all, :page => params[:page], :per_page => 25, :order => ["updated_at DESC"])
   end
 
   def youtube

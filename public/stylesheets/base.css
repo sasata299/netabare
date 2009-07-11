@@ -88,6 +88,20 @@ div.movie_info_end {
   padding-bottom: 10px;
 }
 
+div.pager_main {
+  float: left;
+  width: 770px;
+}
+
+div.pager_sub {
+  float: left;
+  width: 210px;
+}
+
+div.pager_end {
+  clear: both;
+}
+
 div.movie_info {
   float: left;
   width: auto;
