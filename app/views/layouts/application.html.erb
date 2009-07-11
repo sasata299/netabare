@@ -10,8 +10,8 @@
 
     <title>netaru?</title>
 
-    <%= stylesheet_link_tag 'base', 'jquery.fancybox', 'pager', :cache => 'cache_all' %>
-    <%= javascript_include_tag 'jquery-1.3.2.min', 'jquery.easing.1.3', 'jquery.fancybox-1.2.1.pack', 'jquery-faviconize-1.0.pack', 'base', :cache => 'cache_all' %>
+    <%= stylesheet_link_tag 'base', 'jquery.fancybox', 'pager' %>
+    <%= javascript_include_tag 'jquery-1.3.2.min', 'jquery.easing.1.3', 'jquery.fancybox-1.2.1.pack', 'base' %>
 
   </head>
 
@@ -39,9 +39,9 @@
       <div id="footer">
         <div class="links">
           <span class="credit">created by sasata299（ささたつ）</span>
-          <span class="credit"><%= link_to("ブログ", "http://blog.livedoor.jp/sasata299/", :class => "faviconize") %></span>
-          <span class="credit"><%= link_to("Twitter", "http://twitter.com/sasata299/", :class => "faviconize") %></span>
-          <span class="credit"><%= link_to("作品置場", "http://sasata299.com/", :class => "faviconize") %></span>
+          <span class="credit"><%= image_tag("l_favicon.ico", :class => "faviconize", :alt => "ブログ") %><%= link_to("ブログ", "http://blog.livedoor.jp/sasata299/") %></span>
+          <span class="credit"><%= image_tag("t_favicon.ico", :class => "faviconize", :alt => "Twitter") %><%= link_to("Twitter", "http://twitter.com/sasata299/") %></span>
+          <span class="credit"><%= image_tag("s_favicon.ico", :class => "faviconize", :alt => "作品置場") %><%= link_to("作品置場", "http://sasata299.com/") %></span>
         </div>
       </div>
     </div>

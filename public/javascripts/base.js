@@ -22,10 +22,10 @@ $(function() {
     centerOnScroll: true
   });
 
-  $("a.faviconize").faviconize({
-    position: "before",
-    defaultImage: "external.gif",
-    linkable: true,
-    className: "faviconize"
-  });
+  //$("a.faviconize").faviconize({
+  //  position: "before",
+  //  defaultImage: "external.gif",
+  //  linkable: true,
+  //  className: "faviconize"
+  //});
 });
