@@ -17,15 +17,8 @@ $(function() {
     overlayOpacity: '0.9',
     hideOnContentClick: false,
     callbackOnClose: function(){ 
-      window.location.reload();
+      location.href = '/'; // If-Modified-Sinceリクエストを発行しないため
     },
     centerOnScroll: true
   });
-
-  //$("a.faviconize").faviconize({
-  //  position: "before",
-  //  defaultImage: "external.gif",
-  //  linkable: true,
-  //  className: "faviconize"
-  //});
 });
