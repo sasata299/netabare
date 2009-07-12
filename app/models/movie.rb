@@ -29,11 +29,11 @@ class Movie < ActiveRecord::Base
   def self.store_image(data)
     data[:urls].each do |img|
       begin
-        target = 'public/images/' + img.split('/')[-1]
+        # 相対パスにしてみる...
+        target = '../../public/images/' + img.split('/')[-1]
+
         mimage = Magick::ImageList.new(SCRAPE_URL + img)
-        unless File.file?(target)
-          mimage.write(target) unless File.file?(target)
-        end
+        mimage.write(target) unless File.file?(target)
       rescue
         return false
       end
