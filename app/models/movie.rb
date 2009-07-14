@@ -29,11 +29,12 @@ class Movie < ActiveRecord::Base
   def self.store_image(data)
     data[:urls].each do |img|
       begin
-        target = '../../public/images/' + img.split('/')[-1]
+        target = File.dirname(__FILE__) + '/../../public/images/' + img.split('/')[-1]
 
         mimage = Magick::ImageList.new(SCRAPE_URL + img)
         mimage.write(target) unless File.file?(target)
-      rescue
+      rescue => error
+        puts error
         return false
       end
     end
@@ -41,7 +42,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.store_in_db(data)
-    (0..@@last).each do |index|
+    (0..@@last).reverse_each do |index|
       attributes = {
         :name  => data[:titles][index],
         :image => data[:urls][index].split('/')[-1],

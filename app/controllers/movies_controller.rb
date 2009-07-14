@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   def index
     @movie = Movie.paginate(
       :all, 
-      :order => ["updated_at DESC"],
+      :order => ["updated_at DESC, id DESC"],
       :page => params[:page], 
       :per_page => 25
     )
