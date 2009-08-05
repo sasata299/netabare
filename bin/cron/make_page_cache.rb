@@ -13,6 +13,8 @@ ActiveRecord::Base.logger=Logger.new(STDOUT)
 
 $KCODE = 'u'
 
+system "rm -rf /var/www/netabare/public/cache/*"
+
 movies = Movie.find(:all)
 movies.each do |movie|
   url_1 = "http://netaru.sasata299.com/movie/#{movie.id}"
