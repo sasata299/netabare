@@ -8,12 +8,11 @@ $:.push(File.dirname(__FILE__) + "/../../app/models")
 require 'movie'
 
 config = YAML.load_file(File.dirname(__FILE__) + "/../../config/database.yml")
-ActiveRecord::Base.establish_connection(config[ ENV["RAILS_ENV"] ])
+ActiveRecord::Base.establish_connection(config[ENV["RAILS_ENV"]])
 ActiveRecord::Base.logger=Logger.new(STDOUT)
 
-$KCODE = 'u'
-
 system "rm -rf /var/www/netabare/public/cache/*"
+system "wget -O /dev/null http://netaru.sasata299.com/"
 
 movies = Movie.find(:all)
 movies.each do |movie|
