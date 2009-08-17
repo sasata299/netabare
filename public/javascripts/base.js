@@ -17,7 +17,7 @@ $(function() {
     overlayOpacity: '0.9',
     hideOnContentClick: false,
     callbackOnClose: function(){ 
-      location.href = '/'; // If-Modified-Sinceリクエストを発行しないため
+      location.href = location.href; // If-Modified-Sinceリクエストを発行しないため
     },
     centerOnScroll: true
   });
